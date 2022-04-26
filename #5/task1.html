@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+    <h2>JavaScript function</h2>
+
+    <script>
+      function sqar(n){
+        var s_res = n * n;
+        document.write('The result of sqaring the number ' + n + ' is ' + s_res + "<br>");
+        return s_res;
+      }
+      sqar(3);
+
+      function half(n) {
+        var h_res = n / 2;
+        document.write('Half of ' + n + ' is ' +  h_res  + "<br>");
+        return h_res;
+      }
+      half(5);
+
+      function percent(num1, num2){
+        var p_res = (num1 / num2) * 100;
+        document.write(num1 + ' is ' + p_res + '% of ' + num2  + "<br>");
+        return p_res;
+      }
+      percent(5,10);
+
+      function circleArea(r) {
+        var area = Math.PI * sqar(r);
+        document.write('The area of circle with radius ' + r + ' is ' + area  + "<br>");
+        return area;
+      }
+      circleArea(2);
+
+      function doCrazyStuff(n) {
+		      document.write('Do crazy stuff' + "<br>");
+		      var h = half(n);
+		      var s = sqar(h);
+		      var a = circleArea(s);
+          var r = percent(s, a);
+      }
+      doCrazyStuff(5);
+    </script>
+  </body>
+</html>

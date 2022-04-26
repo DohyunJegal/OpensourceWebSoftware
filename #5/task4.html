@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+    <h2>JavaScript Controls</h2>
+    <p>Numbers to humanize : <br></p>
+    <script>
+      function humanize(n) {
+		    switch(n % 10) {
+          case 1:
+            return n + "st";
+          case 2:
+            return n + "nd";
+          case 3:
+            return n + "rd";
+			    default:
+            return n + "th";
+        }
+      }
+      document.write(humanize(1) + "<br>");
+      document.write(humanize(8) + "<br>");
+      document.write(humanize(301) + "<br>");
+      document.write(humanize(402) + "<br>");
+      document.write(humanize(711) + "<br>");
+    </script>
+  </body>
+</html>
