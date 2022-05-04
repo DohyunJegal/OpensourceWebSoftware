@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p><a href="https://www.google.com" id="addr">Google</a></p>
+    <p>Click the button to display the value of the href attribute of the link above.</p>
+    <input type="button" value="Try it" onClick="func();"></input>
+    <p id="res"></p>
+
+    <script>
+      function func(){
+        var x = document.getElementById("addr").href;
+        document.getElementById("res").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Login</h2>
+    <form>
+      ID : <input type="text" id="inputID"><br>
+      PW : <input type="password" id="inputPW"><br>
+      <input type="button" value="Login" onClick="login();">
+    </form>
+
+    <script>
+      function login(){
+        var id = document.getElementById("inputID").value;
+        var pw = document.getElementById("inputPW").value;
+
+        alert("ID : " + id + " PW : " + pw);
+      }
+    </script>
+  </body>
+</html>

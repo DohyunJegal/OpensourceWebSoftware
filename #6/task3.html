@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Simple Calculator</h2>
+    <form>
+      First integer : <input type="text" id="inputA"><br>
+      Second integer : <input type="text" id="inputB"><br>
+      Total : <input type="text" id="result"><br>
+      <input type="button" value="Calculate" onClick="calc();">
+    </form>
+
+    <script>
+      function calc(){
+        var x = document.getElementById("inputA").value;
+        var y = document.getElementById("inputB").value;
+        var res = parseInt(x) + parseInt(y);
+
+        document.getElementById("result").value = res;
+      }
+    </script>
+  </body>
+</html>

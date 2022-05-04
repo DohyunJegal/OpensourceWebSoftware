@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+      #pagetitle {
+        position: absolute;
+        color: white;
+        top: 4%;
+        left: 10%;
+        text-shadow: 1px 1px 1px black;
+      }
+      #logoutBtn {
+        position: absolute;
+        color: white;
+        top: 8%;
+        right: 18%;
+        text-shadow: 1px 1px 1px black;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      hr {
+        border-color: red;
+      }
+      ul {
+        list-style-type: none;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #topmenu li {
+        display: inline;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      a {
+        color: black;
+        text-decoration-line: none;
+        font-weight: bold;
+      }
+      a:hover {
+        color: red;
+      }
+      li {
+        display: inline-block;
+        margin: 3px;
+      }
+      .goods {
+        border: 1px solid black;
+        text-align: center;
+        width: 250px;
+        float: left;
+      }
+      .goods:hover{
+        border: 1px solid red;
+      }
+      #buyBtn {
+        position: relative;
+        left: 24%;
+        background-color: skyblue;
+        border: none;
+        width: 54%;
+        height: 40px;
+      }
+      #scroll {
+        position: fixed;
+        right: 2%;
+        bottom: 10%;
+        text-align: center;
+        color: red;
+      }
+      #scroll a{
+        background-color: rgb(0, 206, 209);
+        border: none;
+        color: red;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      #bottomLine {
+        background-color: rgb(0, 233, 144);
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+      }
+    </style>
+    <script>
+      var cart = "";
+      var price = 0;
+
+      const isChecked = Array.from({length: 16}, () => 0);
+      for(var i = 0; i < isChecked.length; i++){
+        isChecked[i] = 0;
+      }
+
+      function func(num){
+        if(isChecked[num] == 0) {
+          document.getElementById("img" + num).src = "selected.png";
+          document.getElementById("fruit" + num).style.background = "red";
+          isChecked[num] = 1;
+        }
+        else {
+          document.getElementById("img" + num).src = "img" + num + ".png";
+          document.getElementById("fruit" + num).style.background = "white";
+          isChecked[num] = 0;
+        }
+      }
+      function calcPrice(){
+        if(isChecked[0]==1){price += 5; cart += "Apple "}
+        if(isChecked[1]==1){price += 6; cart += "Banana "}
+        if(isChecked[2]==1){price += 4; cart += "Orange "}
+        if(isChecked[3]==1){price += 10; cart += "Watermelon "}
+        if(isChecked[4]==1){price += 5; cart += "Kiwi "}
+        if(isChecked[5]==1){price += 7; cart += "Strawberry "}
+        if(isChecked[6]==1){price += 1; cart += "PassionFruit "}
+        if(isChecked[7]==1){price += 2; cart += "DragonFruit "}
+        if(isChecked[8]==1){price += 3; cart += "Blackberry "}
+        if(isChecked[9]==1){price += 4; cart += "Cherry "}
+        if(isChecked[10]==1){price += 5; cart += "Peach "}
+        if(isChecked[11]==1){price += 6; cart += "Papaya "}
+        if(isChecked[12]==1){price += 7; cart += "Pineapple "}
+        if(isChecked[13]==1){price += 8; cart += "Avocado "}
+        if(isChecked[14]==1){price += 9; cart += "Plum "}
+        if(isChecked[15]==1){price += 10; cart += "Raspberry "}
+
+        if(price == 0){
+          window.alert("Please select item!");
+        }
+        else{
+          window.alert(cart + "is(are) selected!\nTotal : " + price + "$");
+          cart = "";
+          price = 0;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h1 id="pagetitle">Happy Shopping</h1>
+      </div>
+      <div>
+        <a href="login.html" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+
+    <div>
+      <img src="mainbg.jpg" id="top">
+    </div>
+
+    <div>
+      <hr>
+      <div>
+        <ul id="topmenu">
+          <li><a href="">BEST</a></li>
+          <li><a href="">FRUIT</a></li>
+          <li><a href="">VEGETABLE</a></li>
+          <li><a href="">DIARY</a></li>
+          <li><a href="">CLOTH</a></li>
+          <li><a href="">ELECTRONIC</a></li>
+          <li><a href="">BOOK</a></li>
+        </ul>
+      </div>
+      <hr>
+    </div>
+
+    <div>
+      <ul>
+        <li onclick="func('0')">
+          <p>1</p>
+          <div class="goods" id="fruit0">
+            <img src="img0.png" alt="Apple" id="img0">
+            <p>Apple</p>
+            <p>5 $</p>
+          </div>
+        </li>
+        <li onclick="func('1')">
+          <p>2</p>
+          <div class="goods" id="fruit1">
+            <img src="img1.png" alt="Banana" id="img1">
+            <p>Banana</p>
+            <p>6 $</p>
+          </div>
+        </li>
+        <li onclick="func('2')">
+          <p>3</p>
+          <div class="goods" id="fruit2">
+            <img src="img2.png" alt="Orange" id="img2">
+            <p>Orange</p>
+            <p>4 $</p>
+          </div>
+        </li>
+        <li onclick="func('3')">
+          <p>4</p>
+          <div class="goods" id="fruit3">
+            <img src="img3.png" alt="Watermelon" id="img3">
+            <p>Watermelon</p>
+            <p>10 $</p>
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li onclick="func('4')">
+          <p>5</p>
+          <div class="goods" id="fruit4">
+            <img src="img4.png" alt="Kiwi" id="img4">
+            <p>Kiwi</p>
+            <p>5 $</p>
+          </div>
+        </li>
+        <li onclick="func('5')">
+          <p>6</p>
+          <div class="goods" id="fruit5">
+            <img src="img5.png" alt="Strawberry" id="img5">
+            <p>Strawberry</p>
+            <p>7 $</p>
+          </div>
+        </li>
+        <li onclick="func('6')">
+          <p>7</p>
+          <div class="goods" id="fruit6">
+            <img src="img6.png" alt="passionFruit" id="img6">
+            <p>Passion Fruit</p>
+            <p>1 $</p>
+          </div>
+        </li>
+        <li onclick="func('7')">
+          <p>8</p>
+          <div class="goods" id="fruit7">
+            <img src="img7.png" alt="dragonFruit" id="img7">
+            <p>Dragon Fruit</p>
+            <p>2 $</p>
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li onclick="func('8')">
+          <p>9</p>
+          <div class="goods" id="fruit8">
+            <img src="img8.png" alt="Blackberry" id="img8">
+            <p>Blackberry</p>
+            <p>3 $</p>
+          </div>
+        </li>
+        <li onclick="func('9')">
+          <p>10</p>
+          <div class="goods" id="fruit9">
+            <img src="img9.png" alt="Cherry" id="img9">
+            <p>Cherry</p>
+            <p>4 $</p>
+          </div>
+        </li>
+        <li onclick="func('10')">
+          <p>11</p>
+          <div class="goods" id="fruit10">
+            <img src="img10.png" alt="Peach" id="img10">
+            <p>Peach</p>
+            <p>5 $</p>
+          </div>
+        </li>
+        <li onclick="func('11')">
+          <p>12</p>
+          <div class="goods" id="fruit11">
+            <img src="img11.png" alt="Papaya" id="img11">
+            <p>Papaya</p>
+            <p>6 $</p>
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li onclick="func('12')">
+          <p>13</p>
+          <div class="goods" id="fruit12">
+            <img src="img12.png" alt="Pineapple" id="img12">
+            <p>Pineapple</p>
+            <p>7 $</p>
+          </div>
+        </li>
+        <li  onclick="func('13')">
+          <p>14</p>
+          <div class="goods"id="fruit13">
+            <img src="img13.png" alt="Avocado" id="img13">
+            <p>Avocado</p>
+            <p>8 $</p>
+          </div>
+        </li>
+        <li onclick="func('14')">
+          <p>15</p>
+          <div class="goods" id="fruit14">
+            <img src="img14.png" alt="Plum" id="img14">
+            <p>Plum</p>
+            <p>9 $</p>
+          </div>
+        </li>
+        <li onclick="func('15')">
+          <p>16</p>
+          <div class="goods" id="fruit15">
+            <img src="img15.png" alt="Raspberry" id="img15">
+            <p>Raspberry</p>
+            <p>10 $</p>
+          </div>
+        </li>
+      </ul>
+      <input type="button" value="BUY" id="buyBtn" onclick="calcPrice()"><br><br>
+    </div>
+
+    <div id="scroll">
+      <div>
+        <a href="#top" style="padding-left: 22px; padding-right: 23px;">TOP</a><br><br>
+      </div>
+      <div>
+        <a href="#bottomLine" style="padding-left: 4px; padding-right: 4px;">BOTTOM</a>
+      </div>
+    </div>
+    <div id="bottomLine">
+      <p>This is WebProgramming Homework</p>
+    </div>
+  </body>
+</html>

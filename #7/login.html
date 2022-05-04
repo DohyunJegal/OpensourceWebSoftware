@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        background-image: url(loginbg.png);
+        background-size: 87%;
+        color: white;
+      }
+      #textfield{
+        position: absolute;
+        float: left;
+        top: 6%;
+        left: 4%;
+      }
+      #textfield p{
+        font-size: 70px;
+        font-weight: bold;
+      }
+      #loginfield{
+        position: absolute;
+        top: 10%;
+        right: 3%;
+      }
+      #submitBtn{
+        background-color: green;
+        padding: 10px;
+        width: 175px;
+        border: 0px;
+      }
+    </style>
+    <script>
+      function login() {
+        if(document.getElementById("inputID").value == "admin" && document.getElementById("inputPW").value == "1234"){
+          window.alert("Login Success!");
+		  window.open("page.html");
+        }
+        else {
+          window.alert("Login Failed!");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="textfield">
+      <p>Happy<br>Shopping</p>
+    </div>
+    <div>
+      <form id="loginfield">
+        ID<br><input type="text" id="inputID" placeholder="ID : admin / PW :1234"><br>
+        PW<br><input type="password" id="inputPW"><br><br>
+        <input type="submit" value="Login" id="submitBtn" onclick="login();">
+      </form>
+    </div>
+  </body>
+</html>
